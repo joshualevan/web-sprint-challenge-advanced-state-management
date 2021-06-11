@@ -1,10 +1,11 @@
 
+
 import { SMURF_FETCH, FETCH_SUCCEEDS, ADD_SMURF, FETCH_FAILS, ADD_ERROR } from '../actions';
 
 export const initialState = {
     smurfs: [
-        {name: 'Smurf01', position: 'Gardener', nickname: 'Terminator-Model/4000', description: 'Old, Smart, and Wealthy', id:'0000',},
-        {name: 'Smurf02', position: 'Gardener', nickname: 'Terminator-Model/4000', description: 'Old, Smart, and Wealthy', id:'0000',},
+        {name: 'Smurfette', position: 'Beautician', nickname: 'TheGirl', description: 'Perky, sunny, and kind', id:'0000',},
+        {name: 'Smurfette', position: 'Beautician', nickname: 'TheGirl', description: 'Perky, sunny, and kind', id:'0000',},
     ],
     isFetching: false,
     error: '',
@@ -50,6 +51,9 @@ export const reducer = (state = initialState, action) => {
         return state;
     }
   };
+
+
+export default reducer;
 
 //Task List:
 //1. Adds the following state values into the initialState:
