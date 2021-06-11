@@ -1,18 +1,55 @@
 
+import { SMURF_FETCH, FETCH_SUCCEEDS, ADD_SMURF, FETCH_FAILS, ADD_ERROR } from '../actions';
+
 export const initialState = {
     smurfs: [
-        {name: 'Smurfette', position: 'Beautician', nickname: 'TheGirl', description: 'Perky, sunny, and kind', id:'0000',},
-        {name: 'Smurfette', position: 'Beautician', nickname: 'TheGirl', description: 'Perky, sunny, and kind', id:'0000',},
+        {name: 'Smurf01', position: 'Gardener', nickname: 'Terminator-Model/4000', description: 'Old, Smart, and Wealthy', id:'0000',},
+        {name: 'Smurf02', position: 'Gardener', nickname: 'Terminator-Model/4000', description: 'Old, Smart, and Wealthy', id:'0000',},
     ],
     isFetching: false,
     error: '',
 };
 
+export const reducer = (state = initialState, action) => {
+    console.log("CurrentState: ", state);
 
-const reducer = ()=>{
-}
-
-export default reducer;
+    switch (action.type) {
+      case(SMURF_FETCH):
+        return({
+          ...state,
+          isFetching: true
+        })
+      case(FETCH_SUCCEEDS):
+        return({
+          ...state,
+          isFetching: false
+        })
+      case(ADD_SMURF):
+        const newSmurf = {
+            name: action.payload,
+            position: action.payload,
+            nickname: action.payload,
+            description: action.payload,
+            id: '',
+        };
+        return {
+            ...state,
+            smurfs: [...state.smurfs, newSmurf]
+        };
+      case(FETCH_FAILS):
+        return({
+          ...state,
+          isFetching: false
+        })
+      case(ADD_ERROR):
+        return({
+          ...state,
+          error: action.payload,
+        })
+      default:
+        return state;
+    }
+  };
 
 //Task List:
 //1. Adds the following state values into the initialState:
