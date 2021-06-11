@@ -1,6 +1,13 @@
 
 export const initialState = {
-}
+    smurfs: [
+        {name: 'Smurfette', position: 'Beautician', nickname: 'TheGirl', description: 'Perky, sunny, and kind', id:'0000',},
+        {name: 'Smurfette', position: 'Beautician', nickname: 'TheGirl', description: 'Perky, sunny, and kind', id:'0000',},
+    ],
+    isFetching: false,
+    error: '',
+};
+
 
 const reducer = ()=>{
 }
