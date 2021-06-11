@@ -17,7 +17,9 @@ const store = createStore(reducer, applyMiddleware(logger, thunk));
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-    <App />, 
+    <Provider store={store}>
+        <App />
+    </Provider>,
     rootElement
 );
 
