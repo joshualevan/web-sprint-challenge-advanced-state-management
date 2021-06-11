@@ -181,4 +181,6 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
    `Actions- trigger event to update state. Reducers- functions that decide changes in in accordance with the action. Store- Contains the state tree for the entire application. `
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+   `Redux-thunk is an action creator that returns a funtion instead of an action. It can control dispatch by either delaying or through conditions.`
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+   `The Reducer seems to get the job done. I've worked with switches in the past.`
