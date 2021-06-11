@@ -12,6 +12,8 @@ import { reducer } from './reducers';
 const { worker } = require('./mocks/browser');
 worker.start();
 
+const store = createStore(reducer, applyMiddleware(logger, thunk));
+
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
